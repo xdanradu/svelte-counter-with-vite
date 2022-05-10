@@ -1,13 +1,28 @@
 <script lang="ts">
-  let count: number = 0
+  import { count } from '../state/counter.js';
+
   const increment = () => {
-    count += 1
+    count.update(n => n + 1);
+  }
+
+  const decrement = () => {
+    count.update(n => n - 1);
+  }
+
+  const reset = () => {
+    count.update(_ => 0);
   }
 </script>
 
-<button on:click={increment}>
-  Clicks: {count}
+<button on:click={increment}>INCREMENT
 </button>
+
+<button on:click={decrement}>DECREMENT
+</button>
+
+<button on:click={reset}>RESET
+</button>
+
 
 <style>
   button {

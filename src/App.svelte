@@ -1,9 +1,17 @@
 <script lang="ts">
   import logo from './assets/svelte.png'
   import Counter from './lib/Counter.svelte'
+  import { count } from './state/counter.js';
+
+  let countValue;
+
+  count.subscribe(value => {
+    countValue = value;
+  });
 </script>
 
 <main>
+  <h1>The count is {countValue}</h1>
   <Counter />
 </main>
 
