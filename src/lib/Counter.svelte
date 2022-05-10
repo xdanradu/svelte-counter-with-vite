@@ -1,49 +1,11 @@
 <script lang="ts">
-  import { count } from '../state/counter.js';
-
-  const increment = () => {
-    count.update(n => n + 1);
-  }
-
-  const decrement = () => {
-    count.update(n => n - 1);
-  }
-
-  const reset = () => {
-    count.update(_ => 0);
-  }
+  import Increment from "./Increment.svelte";
+  import Decrement from "./Decrement.svelte";
+  import Reset from "./Reset.svelte";
 </script>
 
-<button on:click={increment}>INCREMENT
-</button>
-
-<button on:click={decrement}>DECREMENT
-</button>
-
-<button on:click={reset}>RESET
-</button>
+<Increment/>
+<Decrement/>
+<Reset/>
 
 
-<style>
-  button {
-    font-family: inherit;
-    font-size: inherit;
-    padding: 1em 2em;
-    color: #ff3e00;
-    background-color: rgba(255, 62, 0, 0.1);
-    border-radius: 2em;
-    border: 2px solid rgba(255, 62, 0, 0);
-    outline: none;
-    width: 200px;
-    font-variant-numeric: tabular-nums;
-    cursor: pointer;
-  }
-
-  button:focus {
-    border: 2px solid #ff3e00;
-  }
-
-  button:active {
-    background-color: rgba(255, 62, 0, 0.2);
-  }
-</style>
