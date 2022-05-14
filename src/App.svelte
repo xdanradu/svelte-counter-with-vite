@@ -2,6 +2,7 @@
   import logo from './assets/svelte.png'
   import Counter from './lib/Counter.svelte'
   import { count } from './state/counter.js';
+  import List from './lib/List.svelte';
 
   let countValue;
 
@@ -13,6 +14,10 @@
 <main>
   <h1>The count is {countValue}</h1>
   <Counter />
+
+  <hr>
+
+  <List />
 </main>
 
 <style>
